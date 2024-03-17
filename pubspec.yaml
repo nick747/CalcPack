@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_riverpod: ^2.5.1
+  math_expressions: ^2.4.0
 
 dev_dependencies:
   flutter_test:

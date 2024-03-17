@@ -1,4 +1,5 @@
 import 'package:calcpack/models/theme.dart';
+import 'package:calcpack/widgets/calculator.dart';
 import 'package:calcpack/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +21,7 @@ class MainApp extends StatelessWidget {
           iconTheme: const IconThemeData(color: secondary),
         ),
         drawer: const CalcDrawer(),
+        body: const MyCalculator(),
       ),
     );
   }
