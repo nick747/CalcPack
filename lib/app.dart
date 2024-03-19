@@ -1,7 +1,7 @@
 import 'package:calcpack/models/theme.dart';
-import 'package:calcpack/widgets/calculator.dart';
 import 'package:calcpack/widgets/drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
@@ -21,12 +21,13 @@ class MainApp extends StatelessWidget {
           iconTheme: const IconThemeData(color: secondary),
         ),
         drawer: const CalcDrawer(),
-        body: Container(
-          constraints: const BoxConstraints(
-            maxWidth: 500,
-          ),
-          child: const MyCalculator(),
-        ),
+        body: Consumer(builder: (context, ref, _) {
+          final selectedPageBuilder = ref.watch(selectedPageBuilderProvider);
+          return Container(
+            constraints: const BoxConstraints(maxWidth: 500),
+            child: selectedPageBuilder ?? Container(),
+          );
+        }),
       ),
     );
   }
