@@ -21,7 +21,12 @@ class MainApp extends StatelessWidget {
           iconTheme: const IconThemeData(color: secondary),
         ),
         drawer: const CalcDrawer(),
-        body: const MyCalculator(),
+        body: Container(
+          constraints: const BoxConstraints(
+            maxWidth: 500,
+          ),
+          child: const MyCalculator(),
+        ),
       ),
     );
   }

@@ -15,9 +15,6 @@ class _MyCalculatorState extends State<MyCalculator> {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        constraints: const BoxConstraints(
-          maxWidth: 400,
-        ),
         margin: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
